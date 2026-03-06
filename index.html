@@ -1,1 +1,452 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>刺繍制作｜小ロット対応・ロゴ刺繍・ワッペン制作</title>
+  <meta name="description" content="小ロットから対応。ロゴ刺繍・ワッペン・名入れ刺繍。データ作成〜仕上げまで一括対応。見積りは24時間以内に返信します。" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#121222;
+      --muted:#a6a6b3;
+      --text:#f2f2f6;
+      --accent:#d8b14a;
+      --line:#2a2a3c;
+      --ok:#66e6a3;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(216,177,74,.25), transparent 55%),
+                  radial-gradient(900px 700px at 90% 10%, rgba(102,230,163,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(11,11,16,.75);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo{
+      width:34px;height:34px;border-radius:10px;
+      background: linear-gradient(135deg, rgba(216,177,74,.9), rgba(102,230,163,.55));
+      box-shadow: 0 12px 30px rgba(216,177,74,.15);
+    }
+    .brand b{letter-spacing:.04em}
+    .menu{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    .menu a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+    }
+    .menu a:hover{color:var(--text); background: rgba(255,255,255,.06)}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid rgba(216,177,74,.4);
+      background: rgba(216,177,74,.10);
+      text-decoration:none; font-weight:700;
+    }
+    .cta:hover{background: rgba(216,177,74,.18)}
+    .hero{padding:56px 0 22px}
+    .grid2{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+    @media (max-width:900px){ .grid2{grid-template-columns:1fr} }
+    .h1{
+      font-size:42px; line-height:1.2; margin:0 0 14px;
+      letter-spacing:.02em;
+    }
+    @media (max-width:520px){ .h1{font-size:34px} }
+    .sub{color:var(--muted); margin:0 0 18px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+    .badge{
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color:#e9e9f2; font-size:13px;
+    }
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+    @media (max-width:900px){ .cards{grid-template-columns:1fr} }
+    .card{
+      background: rgba(18,18,34,.75);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px; padding:16px;
+    }
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .panel{
+      background: rgba(18,18,34,.65);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px; padding:18px;
+    }
+    .panel h2{margin:0 0 10px;font-size:18px}
+    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    @media (max-width:520px){ .kpi{grid-template-columns:1fr} }
+    .kpi .box{
+      padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .kpi b{display:block;font-size:18px}
+    .kpi span{color:var(--muted);font-size:13px}
+    section{padding:34px 0}
+    .section-title{font-size:24px;margin:0 0 10px}
+    .section-sub{color:var(--muted);margin:0 0 18px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:900px){ .services{grid-template-columns:1fr} }
+    .service{
+      border-radius:16px;padding:16px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .service ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    .portfolio{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    @media (max-width:900px){ .portfolio{grid-template-columns:repeat(2,1fr)} }
+    .shot{
+      height:140px;border-radius:16px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(216,177,74,.06));
+      display:flex;align-items:center;justify-content:center;
+      color:var(--muted); font-size:13px; text-align:center; padding:10px;
+    }
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    @media (max-width:900px){ .steps{grid-template-columns:1fr} }
+    .step{
+      padding:14px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(18,18,34,.6);
+    }
+    .step b{display:block;margin-bottom:6px}
+    .price{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px
+    }
+    @media (max-width:900px){ .price{grid-template-columns:1fr} }
+    .list{
+      margin:0; padding-left:18px; color:var(--muted)
+    }
+    .faq details{
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      border-radius:14px;
+      padding:12px 14px;
+      margin:10px 0;
+    }
+    .faq summary{cursor:pointer;font-weight:700}
+    .faq p{color:var(--muted);margin:10px 0 0}
+    form{
+      display:grid; gap:10px;
+    }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(11,11,16,.6);
+      color:var(--text);
+      outline:none;
+    }
+    input::placeholder, textarea::placeholder{color:#777790}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:720px){ .row{grid-template-columns:1fr} }
+    .btn{
+      padding:12px 14px;border-radius:12px;
+      border:1px solid rgba(216,177,74,.55);
+      background: rgba(216,177,74,.14);
+      color:var(--text); font-weight:800;
+      cursor:pointer;
+    }
+    .btn:hover{background: rgba(216,177,74,.22)}
+    footer{padding:22px 0 40px;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .note{font-size:13px;color:var(--muted)}
+    .pill-ok{color:var(--ok);font-weight:700}
+  </style>
+</head>
 
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="logo" aria-hidden="true"></span>
+      <b>刺繍工房（仮）</b>
+    </a>
+    <nav class="menu" aria-label="サイトメニュー">
+      <a href="#services">できること</a>
+      <a href="#portfolio">事例</a>
+      <a href="#process">流れ</a>
+      <a href="#pricing">料金</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="#contact">見積り依頼</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="grid2">
+      <div>
+        <h1 class="h1">小ロットOK。<br>ロゴ刺繍・ワッペン制作、<br>データ作成からまとめて。</h1>
+        <p class="sub">
+          店舗ロゴ・チームウェア・ノベルティ・アパレル試作まで。
+          「これ刺繍できる？」から相談歓迎。見積りは原則24時間以内に返信します。
+        </p>
+
+        <div class="badges" role="list">
+          <span class="badge">小ロット対応</span>
+          <span class="badge">サンプル作成可</span>
+          <span class="badge">データ作成サポート</span>
+          <span class="badge">再注文しやすい管理</span>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>仕上がり重視</h3>
+            <p>細部の潰れ・糸の密度・立体感を調整して、ロゴを“刺繍映え”する形に。</p>
+          </div>
+          <div class="card">
+            <h3>わかりやすい進行</h3>
+            <p>画像を送るだけでOK。データ確認→サンプル→量産の順で、安心して進められます。</p>
+          </div>
+          <div class="card">
+            <h3>現場に強い提案</h3>
+            <p>用途（販売/制服/イベント）に合わせて、素材やサイズ感も一緒に決められます。</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2>まずは無料で方向性チェック</h2>
+        <p class="note">下記が分かると見積りが速いです（ざっくりでOK）</p>
+        <div class="kpi">
+          <div class="box"><b>用途</b><span>販売 / 制服 / 贈答 など</span></div>
+          <div class="box"><b>数量</b><span>1 / 10 / 30 / 100…</span></div>
+          <div class="box"><b>納期</b><span>いつまでに必要か</span></div>
+        </div>
+        <p class="note" style="margin-top:12px">
+          <span class="pill-ok">OK：</span>画像からの刺繍化／色数調整／ワッペン加工<br>
+          <span style="color:#ffb3b3;font-weight:700">要相談：</span>極小文字・グラデーション表現
+        </p>
+        <p style="margin:14px 0 0">
+          <a class="cta" href="#contact">見積りを依頼する</a>
+        </p>
+      </aside>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="section-title">できること</h2>
+      <p class="section-sub">よくある依頼をベースに、最適な仕様を提案します。</p>
+
+      <div class="services">
+        <div class="service">
+          <h3>ロゴ刺繍（直刺繍）</h3>
+          <p class="note">帽子・胸元・袖・背中など</p>
+          <ul>
+            <li>店舗/ブランドロゴ</li>
+            <li>スタッフウェア・ユニフォーム</li>
+            <li>イベント用チームウェア</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>ワッペン制作</h3>
+          <p class="note">縫い付け / アイロン / ベルクロ等</p>
+          <ul>
+            <li>ロゴワッペン・ネームタグ</li>
+            <li>数量多めのノベルティ</li>
+            <li>交換運用（制服・作業着）</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>名入れ・1点物</h3>
+          <p class="note">プレゼント/記念品にも</p>
+          <ul>
+            <li>名前/日付/短文</li>
+            <li>タオル・バッグ</li>
+            <li>試作→販売前サンプル</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="wrap">
+      <h2 class="section-title">制作事例</h2>
+      <p class="section-sub">※ここは写真を差し替えるだけで“信頼”が爆上がりします。</p>
+
+      <div class="portfolio">
+        <div class="shot">事例写真1<br>（ロゴ刺繍/胸）</div>
+        <div class="shot">事例写真2<br>（キャップ）</div>
+        <div class="shot">事例写真3<br>（ワッペン）</div>
+        <div class="shot">事例写真4<br>（背中大）</div>
+        <div class="shot">事例写真5<br>（名入れ）</div>
+        <div class="shot">事例写真6<br>（タオル）</div>
+        <div class="shot">事例写真7<br>（バッグ）</div>
+        <div class="shot">事例写真8<br>（試作）</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <h2 class="section-title">ご注文の流れ</h2>
+      <p class="section-sub">迷いやすい部分を先に潰して、スムーズに進めます。</p>
+
+      <div class="steps">
+        <div class="step">
+          <b>1. 相談</b>
+          <span class="note">用途/数量/納期/画像を送付</span>
+        </div>
+        <div class="step">
+          <b>2. 仕様提案</b>
+          <span class="note">サイズ・糸色・加工方法</span>
+        </div>
+        <div class="step">
+          <b>3. データ確認</b>
+          <span class="note">刺繍向けに微調整</span>
+        </div>
+        <div class="step">
+          <b>4. サンプル</b>
+          <span class="note">必要なら先に1点作成</span>
+        </div>
+        <div class="step">
+          <b>5. 量産・納品</b>
+          <span class="note">都内手渡し/配送など</span>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:12px">
+        目安：データ作成〜サンプル <b>3〜7営業日</b> / 量産 <b>数量により変動</b>（急ぎは要相談）
+      </p>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2 class="section-title">料金の目安</h2>
+      <p class="section-sub">刺繍は条件で変動します。見積りは無料です（項目を明確に出します）。</p>
+
+      <div class="price">
+        <div class="card">
+          <h3>見積り項目</h3>
+          <ul class="list">
+            <li>データ作成費（初回のみ／再注文は割安）</li>
+            <li>刺繍代（サイズ×色数×密度）</li>
+            <li>ボディ代（持ち込み or 手配）</li>
+            <li>ワッペン加工（裏面仕様など）</li>
+            <li>納期オプション（特急）</li>
+          </ul>
+          <p class="note" style="margin-top:10px">「予算が先」でもOK：予算内でできる仕様に寄せます。</p>
+        </div>
+
+        <div class="card">
+          <h3>よくある目安（例）</h3>
+          <ul class="list">
+            <li>胸ロゴ（小）×10枚：データ＋刺繍で◯◯円〜</li>
+            <li>キャップ刺繍 ×10点：◯◯円〜</li>
+            <li>ワッペン ×30枚：◯◯円〜</li>
+          </ul>
+          <p class="note" style="margin-top:10px">
+            ※ここは実際の相場に合わせて差し替え推奨（書けないなら例は消してOK）
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap faq">
+      <h2 class="section-title">よくある質問</h2>
+      <p class="section-sub">不安が消えると、問い合わせが増えます。</p>
+
+      <details>
+        <summary>画像しかないのですが依頼できますか？</summary>
+        <p>できます。ロゴ画像や写真を送ってください。刺繍向けに線を整理し、潰れないよう調整します（必要なら確認用のイメージもお送りします）。</p>
+      </details>
+
+      <details>
+        <summary>最小ロットはありますか？</summary>
+        <p>小ロット対応可能です。内容により最適な方法が変わるので、数量と用途を教えてください。</p>
+      </details>
+
+      <details>
+        <summary>納期はどれくらい？</summary>
+        <p>データ作成→サンプル→量産の順で進みます。急ぎの場合は希望日を先に教えてください。可能な範囲で調整します。</p>
+      </details>
+
+      <details>
+        <summary>持ち込みはできますか？</summary>
+        <p>可能です（素材や形状によっては要相談）。ボディ手配も対応できます。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="section-title">見積り・お問い合わせ</h2>
+      <p class="section-sub">ざっくりでもOK。24時間以内返信を目安にしています。</p>
+
+      <div class="price">
+        <div class="card">
+          <h3>フォーム（例）</h3>
+          <form action="#" method="post">
+            <div class="row">
+              <input type="text" name="name" placeholder="お名前" />
+              <input type="text" name="contact" placeholder="連絡先（メール/LINE/Instagram）" />
+            </div>
+            <div class="row">
+              <select name="type">
+                <option value="">依頼内容を選択</option>
+                <option>ロゴ刺繍（直刺繍）</option>
+                <option>ワッペン制作</option>
+                <option>名入れ</option>
+                <option>相談したい</option>
+              </select>
+              <input type="text" name="deadline" placeholder="希望納期（例：4/18まで）" />
+            </div>
+            <div class="row">
+              <input type="text" name="qty" placeholder="数量（例：10枚）" />
+              <input type="text" name="size" placeholder="刺繍サイズ（例：横7cm）" />
+            </div>
+            <textarea name="detail" rows="5" placeholder="用途・イメージ・予算感など（任意）"></textarea>
+            <button class="btn" type="button" onclick="alert('このテンプレは送信機能未実装です。Googleフォームやフォームサービスに接続すると実運用できます。');">
+              この内容で問い合わせる（デモ）
+            </button>
+          </form>
+          <p class="note">※実運用は Googleフォーム / formrun / STUDIO 等に接続がおすすめ</p>
+        </div>
+
+        <div class="card">
+          <h3>店舗・工房情報</h3>
+          <p class="note">
+            会社名：刺繍工房（仮）<br>
+            対応：都内中心（配送対応可）<br>
+            営業：◯◯〜◯◯（不定休）<br>
+            SNS：Instagram / LINE（URLを入れる）
+          </p>
+          <p class="note">SNSのDM窓口があると問い合わせ率が上がります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div>© 刺繍工房（仮）</div>
+      <div class="note">ロゴ刺繍 / ワッペン / 名入れ / 小ロット対応</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
